@@ -16,6 +16,8 @@ function getElem(id) {
 
 export function setHTML(id, html) {
   getElem(id)
+  console.log('ID', id),
+    console.log('HTML', html)
   elems[id].innerHTML = html
 }
 

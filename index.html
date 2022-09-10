@@ -12,16 +12,36 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="assets/style/main.css">
   <link rel="stylesheet" href="assets/style/style.css">
+  <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css' rel='stylesheet'
+    integrity='sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC' crossorigin='anonymous'>
   <title>taskMaster</title>
 </head>
 
-<body>
+<style>
+  body.debug .container,
+  body.debug .container-fluid {
+    outline: 2px double blue;
+    outline-offset: -2px;
+  }
+
+  body.debug .row {
+    outline: 2px dashed red;
+    outline-offset: -2px;
+  }
+
+  body.debug [class*="col-"] {
+    outline: 2px dotted forestgreen;
+    outline-offset: -3px;
+  }
+</style>
+
+<body class="debug">
   <header>
     <nav class="navbar navbar-dark navbar-expand bg-dark text-light no-select">
       <a class="navbar-brand ms-3" href="#">
         <img src="https://codeworks.blob.core.windows.net/public/assets/img/cw-mark.png" height="45" alt=""
           loading="lazy">
-        <span class="ms-2">taskMaster</span>
+        <span class="ms-2">Task Master</span>
       </a>
     </nav>
   </header>
@@ -29,14 +49,38 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-12">
-          <div id="app"></div>
+          <div id="app">
+            <div class="row">
+              <div class="col-12">
+                <h1>TASKMASTER</h1>
+              </div>
+              <div class="row">
+                <div class="col-6"></div>
+                <form class="d-flex" onsubmit="app.listsController.createList()">
+
+                  <label for="name">Name</label>
+                  <input type="text" class="form-control" name="name" placeholder="Name of Task">
+
+                  <label for="colorpicker">Color:</label>
+                  <input class='form-control' type="color" name="color" value="#0000ff">
+
+                  <button class="btn btn-primary" type="submit">Make Task</button>
+
+                </form>
+
+              </div>
+              <div class="row" id="lists">
+
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </main>
   <footer class="bg-dark text-light">
     <div class="text-center no-select">
-      <p><small>Made with 💖 by CodeWorks</small></p>
+      <p><small>FOCUS YOUR MIND</small></p>
     </div>
   </footer>
 
