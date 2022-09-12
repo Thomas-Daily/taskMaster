@@ -1,4 +1,5 @@
 import { List } from "./Models/List.js"
+import { Task } from "./Models/Task.js"
 import { Value } from "./Models/Value.js"
 import { EventEmitter } from "./Utils/EventEmitter.js"
 import { isValidProp } from "./Utils/isValidProp.js"
@@ -10,6 +11,11 @@ class AppState extends EventEmitter {
 
   /** @type {import('./Models/List').List[]} */
   lists = loadState('lists', List)
+
+  /** @type {import('./Models/List').List[]} */
+  tasks = loadState('tasks', Task)
+
+
 
 }
 

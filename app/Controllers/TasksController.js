@@ -1,11 +1,21 @@
+import { appState } from "../AppState.js";
 import { tasksService } from "../Services/TasksService.js";
 import { getFormData } from "../Utils/FormHandler.js";
+import { setHTML } from "../Utils/Writer.js";
+
+function _drawTask() {
+  let template = ''
+  appState.tasks.forEach(task => {
+    template += task.Template
+  })
+  setHTML('lists', template)
+}
 
 export class TasksController {
 
   constructor() {
-    console.log('tasks contoller online')
-    console.log(this.createTask)
+    appState.on('tasks', _drawTask)
+    _drawTask()
   }
 
 
