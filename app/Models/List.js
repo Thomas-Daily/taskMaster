@@ -17,17 +17,20 @@ export class List {
         </div>
       </div>
       <div class="row" id='tasks'>
-        <form class="bg-info rounded p-1" onsubmit="app.taskController.createTask(${this.id})">
-  <div class="d-flex w-100 ">
-    <div class="flex-grow-1">
-      <input class="form-control square-right" type="text" required minlength="2" name="name" placeholder="Task..." />
-      <label for="task" class="visually-hidden">Task</label>
-    </div>
-    <button type="submit" class="btn btn-info square-left" title="Add Item">
-      <b><i class="mdi mdi-plus text-light"></i></b>
-    </button>
-  </div>
-  </form>
+        <form class="bg-info rounded p-1" onsubmit="app.tasksController.createTask('${this.id}')">
+          <div class="d-flex w-100 ">
+            <div class="flex-grow-1">
+              <div id='task'>
+                
+              </div>
+              <input class="form-control square-right" type="text" required minlength="2" name="name" placeholder="Task..." />
+              <label for="task" class="visually-hidden">Task</label>
+            </div>
+            <button type="submit" class="btn btn-info square-left" title="Add Item">
+              <b><i class="mdi mdi-plus text-light"></i></b>
+            </button>
+          </div>
+        </form>
         </div>
       </div>
     </div>`

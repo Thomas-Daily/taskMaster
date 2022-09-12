@@ -1,11 +1,11 @@
 import { ListsController } from "./Controllers/ListsController.js";
-import { TaskController } from "./Controllers/TasksController.js";
+import { TasksController } from "./Controllers/TasksController.js";
 
 
 class App {
   listsController = new ListsController()
 
-  taskController = new TaskController()
+  tasksController = new TasksController()
 }
 
 window["app"] = new App();
